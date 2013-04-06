@@ -28,6 +28,7 @@ class Stack {
     public function pop()
     {
         $this->emptyCheck();
+        $this->size -= 1;
     }
 
     private function emptyCheck()

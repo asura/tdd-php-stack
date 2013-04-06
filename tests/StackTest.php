@@ -44,6 +44,7 @@ class StackTest extends PHPUnit_Framework_TestCase {
         try {
             $this->stack->push(1);
             $this->stack->pop();
+            $this->assertEquals(0, $this->stack->size());
         } catch (EmptyStackException $expected) {
             $this->fail("ここへは来ない");
         }
