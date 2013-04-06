@@ -17,6 +17,7 @@ class StackTest extends PHPUnit_Framework_TestCase {
     public function testPushAndTop()
     {
         $this->stack->push(1);
+        $this->assertFalse($this->stack->isEmpty());
         $this->assertEquals(1, $this->stack->top());
     }
 
