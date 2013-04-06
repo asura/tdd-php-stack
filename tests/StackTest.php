@@ -58,4 +58,13 @@ class StackTest extends PHPUnit_Framework_TestCase {
         } catch (EmptyStackException $expected) {
         }
     }
+
+    public function testPushPushPopTop()
+    {
+        $this->stack->push(1);
+        $this->stack->push(2);
+        $this->assertEquals(2, $this->stack->top());
+        $this->stack->pop();
+        $this->assertEquals(1, $this->stack->top());
+    }
 }
