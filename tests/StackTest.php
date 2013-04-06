@@ -19,4 +19,13 @@ class StackTest extends PHPUnit_Framework_TestCase {
         $this->stack->push(1);
         $this->assertEquals(1, $this->stack->top());
     }
+
+    public function testPushAndSize()
+    {
+        $this->stack->push(1);
+        $this->assertEquals(1, $this->stack->size());
+
+        $this->stack->push(2);
+        $this->assertEquals(2, $this->stack->size());
+    }
 }
