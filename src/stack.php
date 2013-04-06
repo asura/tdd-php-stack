@@ -1,5 +1,8 @@
 <?php
 
+class EmptyStackException extends Exception {
+}
+
 class Stack {
     private $value;
     private $size;
@@ -15,10 +18,22 @@ class Stack {
     }
     public function top()
     {
+        $this->emptyCheck();
         return $this->value;
     }
     public function size()
     {
         return $this->size;
+    }
+    public function pop()
+    {
+        $this->emptyCheck();
+    }
+
+    private function emptyCheck()
+    {
+        if ($this->isEmpty()) {
+            throw new EmptyStackException();
+        }
     }
 }

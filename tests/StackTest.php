@@ -29,4 +29,32 @@ class StackTest extends PHPUnit_Framework_TestCase {
         $this->stack->push(2);
         $this->assertEquals(2, $this->stack->size());
     }
+
+    public function testEmptyPop()
+    {
+        try {
+            $this->stack->pop();
+            $this->fail("ここへは来ない");
+        } catch (EmptyStackException $expected) {
+        }
+    }
+
+    public function testPushAndPop()
+    {
+        try {
+            $this->stack->push(1);
+            $this->stack->pop();
+        } catch (EmptyStackException $expected) {
+            $this->fail("ここへは来ない");
+        }
+    }
+
+    public function testEmptyTop()
+    {
+        try {
+            $this->stack->top();
+            $this->fail("ここへは来ない");
+        } catch (EmptyStackException $expected) {
+        }
+    }
 }
